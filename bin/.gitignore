@@ -1,0 +1,38 @@
+/*.frag
+/*.vert
+/libkuhl.a
+
+# Generated Binaries
+/ogl2-slideshow
+/ogl2-texture
+/ogl2-triangle
+/distjudge
+/viewer
+/videoplay
+/prerend
+/texture
+/texturefilter
+/triangle
+/triangle-color
+/triangle-shade
+/picker
+/slerp
+/explode
+/teartest
+/text
+/flock
+/ik
+/panorama
+/pong
+/glinfo
+/frustum
+/tracker-demo
+/tracker-stats
+/zfight
+
+# Binaries created in vrpn folder
+/fake-server
+/recorder
+
+# Apple OS X debugging information
+/*.dSYM

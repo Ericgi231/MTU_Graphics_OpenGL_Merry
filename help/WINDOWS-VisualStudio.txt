@@ -1,0 +1,73 @@
+--- GETTING STARTED ---
+
+STEP 0: Install Visual Studio (we have verified that it works with
+Visual Studio Community 2015, 2017, or 2019) and make sure you include the
+C++ compiler during the installation (by default, it may not be installed
+since it is "optional"). You will also need to install cmake for Windows. 
+Finally, you may also want to install git to interact with the opengl-examples
+git repository.
+
+If you are presented with a choice, use the 64 bit versions of libraries
+and the compilation of your code.
+
+
+STEP 1: You will first need to download several libraries that
+opengl-examples depends on. Place libraries that you download into a
+single folder named "opengl-libs" right next to your "opengl-examples"
+folder. Extract the contents of the library zip files that you
+download into the opengl-libs folder directly (don't create extra
+subdirectories).
+
+STEP 2: Download and compile each of the following
+libraries. Instructions for obtaining and compiling these libraries
+are available in separate text files in this directory. Don't put
+multiple versions of any one library inside of your opengl-libs
+folder---having multiple versions available may confuse the build
+process.
+
+ - ASSIMP - You need to compile yourself.
+ - GLFW - Download either the 64-bit precompiled version or the source code.
+ - Glew - Download includes 64 bit precompiled library.
+ - ImageMagick - Optional: Install it to load textures besides PNG and JPG
+ - VRPN - Optional: if in doubt, skip it.
+
+STEP 3: Open the cmake-gui app. Set the "Where is the source code" and
+"Where to build the binaries" to be your opengl-examples folder. If
+you have previously completed this step but are getting unusual
+results, first go to "File" and click "Delete cache". Next, click
+"Configure" and verify that your version of Visual Studio is selected
+and that you select the 64-bit option (if it isn't selected by
+default). If there are any obvious error messages relating to the
+three required libraries above, attempt to fix them. If the libraries
+are not being found, look at the top of the cmake output to see a
+listing of different directories where cmake is trying to find your
+libraries and make sure that everything looks OK. Some of the
+variables may be highlighted in red. This does not necessarily
+indicate that there is a problem, however. Once everything is properly
+configured, press "Generate".
+
+STEP 4: Click "Open Project" to open Visual Studio. Try building the
+"triangle" program (a simple program that doesn't depend on ASSIMP)
+and the "viewer" program (a program that does depend on assimp).
+
+STEP 5: Look for the programs you built in
+opengl-examples/bin/Debug. But, before you try to run them, you will
+need to copy these two files next to your binary in opengl-examples/bin/Debug:
+
+- opengl-libs/assimp-???/bin/Debug/assimp-vc???-mtd.dll 
+- opengl-libs/glew-???/bin/Release/x64/glew32.dll
+
+If you installed ImageMagick, all of the dll files in this folder also need
+to be copied into opengl-examples/bin/Debug:
+
+- C:\Program Files\ImageMagick-???-Q16
+
+Tip: Use cmd.exe, the git-bash shell, or some other console to run the
+programs. The programs do print useful information to the console and
+some of the programs take parameters. Therefore, running the programs
+from the command line may be helpful.
+
+Tip: Make your file browser show you filename extensions. There may be
+other similarly named and similar looking files. You want the .dll
+files!
+
